@@ -5,7 +5,7 @@ export const DataTableUtilities = (props: {
   setrowKeywordsFilter: Function;
 }) => {
   return (
-    <div className="datatable-utilites">
+    <div className="datatable-utilities">
       <div className="datatable-utilities__row-number-selector">
         <span>Show </span>
         <select
@@ -23,8 +23,8 @@ export const DataTableUtilities = (props: {
         <span> entries</span>
       </div>
 
-      <div className="datatable-utilities__seach-bar">
-        <label htmlFor="row-search-bar">Search</label>
+      <div className="datatable-utilities__search-bar">
+        <label htmlFor="row-search-bar">Search : </label>
         <input
           value={props.rowKeywordsFilter}
           onChange={(e) => props.setrowKeywordsFilter(e.target.value)}

@@ -10,7 +10,7 @@ export const employeesReducer = (state = employeesDefaultState, action) => {
       const newData = [];
 
       for (let employee in state.data) {
-        if (Object.keys(employee) !== Object.keys(action.payload.employee)) {
+        if (Object.keys(employee) !== Object.keys(action.payload)) {
           newData.push(employee);
         }
       }
