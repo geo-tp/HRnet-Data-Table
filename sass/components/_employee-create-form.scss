@@ -1,0 +1,10 @@
+.employee-create-form {
+  display: flex;
+  flex-direction: column;
+
+  &__button {
+    width: 80px;
+    margin: 0 auto;
+    margin-top: 20px;
+  }
+}
