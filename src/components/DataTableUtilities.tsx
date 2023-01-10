@@ -1,15 +1,19 @@
+import { useState } from "react";
+
 export const DataTableUtilities = (props: {
   rowNumberFilter: number;
   setRowNumberFilter: Function;
-  rowKeywordsFilter: string;
-  setrowKeywordsFilter: Function;
+  currentRows: object[];
+  setCurrentRows: Function;
 }) => {
+  const [rowKeywordsFilter, setRowKeywordsFilter] = useState("");
+
   return (
     <div className="datatable-utilities">
       <div className="datatable-utilities__row-number-selector">
         <span>Show </span>
         <select
-          onChange={(e) => props.setRowNumberFilter(e.target.value)}
+          onChange={(e) => props.setRowNumberFilter(parseInt(e.target.value))}
           name="row-number-selector"
           id="row-number-selector"
         >
@@ -26,8 +30,8 @@ export const DataTableUtilities = (props: {
       <div className="datatable-utilities__search-bar">
         <label htmlFor="row-search-bar">Search : </label>
         <input
-          value={props.rowKeywordsFilter}
-          onChange={(e) => props.setrowKeywordsFilter(e.target.value)}
+          value={rowKeywordsFilter}
+          onChange={(e) => setRowKeywordsFilter(e.target.value)}
           type="text"
           name="row-search-bar"
           id="row-search-bar"

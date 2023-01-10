@@ -1,5 +1,4 @@
-import { useState } from "react";
-import { mockedEmployees } from "../utils/mockedEmployees";
+import { useEffect, useState } from "react";
 import { DataTableBody } from "./DataTableBody";
 import { DataTableHead } from "./DataTableHead";
 import { DataTablePagination } from "./DataTablePagination";
@@ -9,11 +8,24 @@ export const DataTable = (props: {
   dataset: Array<object>;
   fields?: Array<string>;
 }) => {
-  const [rowKeywordsFilter, setrowKeywordsFilter] = useState("");
   const [rowNumberFilter, setRowNumberFilter] = useState(10);
-  const [rowRange, setRowRange] = useState([0, 0]);
-  const [currentRows, setCurrentRows] = useState(mockedEmployees);
+  const rowTotalCount = props.dataset.length;
+  const [currentRows, setCurrentRows] = useState(props.dataset);
+  const [pageIndex, setPageIndex] = useState(0);
 
+  // Reset page index to 0 when rowNumberFilter get updated
+  useEffect(() => {
+    setPageIndex(0);
+  }, [rowNumberFilter]);
+
+  // Calculate current showing rows taking into account pagination
+  useEffect(() => {
+    const currentStartIndex = pageIndex * rowNumberFilter;
+    const currentEndIndex = pageIndex * rowNumberFilter + rowNumberFilter;
+    setCurrentRows(props.dataset.slice(currentStartIndex, currentEndIndex));
+  }, [rowNumberFilter, pageIndex, props.dataset]);
+
+  // Return keys of dataset object to use it as fields if props.fields is null
   const extractFields: Function = (): string[] => {
     return Object.keys(props.dataset[0]);
   };
@@ -23,21 +35,28 @@ export const DataTable = (props: {
       <DataTableUtilities
         rowNumberFilter={rowNumberFilter}
         setRowNumberFilter={setRowNumberFilter}
-        rowKeywordsFilter={rowKeywordsFilter}
-        setrowKeywordsFilter={setrowKeywordsFilter}
+        currentRows={currentRows}
+        setCurrentRows={setCurrentRows}
       />
 
       <table>
         <DataTableHead
-          fields={props.fields ? props.fields : extractFields(props.dataset)}
+          currentRows={currentRows}
+          setCurrentRows={setCurrentRows}
+          namedFields={
+            props.fields ? props.fields : extractFields(props.dataset)
+          }
+          tableFields={extractFields(props.dataset)}
         />
         <DataTableBody dataset={currentRows} />
       </table>
 
       <DataTablePagination
-        rowRange={rowRange}
         rowNumberFilter={rowNumberFilter}
+        rowTotalCount={rowTotalCount}
         currentRows={currentRows}
+        setPageIndex={setPageIndex}
+        pageIndex={pageIndex}
       />
     </div>
   );

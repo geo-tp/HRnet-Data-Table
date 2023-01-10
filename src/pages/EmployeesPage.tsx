@@ -1,12 +1,13 @@
 import { DataTable } from "../components/DataTable";
 import { PrimaryHeader } from "../components/PrimaryHeaders";
+import { mockedEmployees } from "../utils/mockedEmployees";
 
 export const EmployeesPage = () => {
   return (
     <div className="employees-pages">
       <PrimaryHeader title="Current Employees" />
       <DataTable
-        dataset={[{ firstname: "aaaa", lastname: "bbbb" }]}
+        dataset={mockedEmployees}
         fields={[
           "First Name",
           "Last Name",

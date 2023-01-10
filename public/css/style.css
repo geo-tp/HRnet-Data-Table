@@ -78,7 +78,9 @@ label {
   justify-content: space-between;
   align-items: center;
 }
-
+.datatable-pagination__buttons {
+  display: flex;
+}
 .default-container {
   display: flex;
   flex-direction: column;
