@@ -2,15 +2,20 @@ import { useEffect, useState } from "react";
 
 export const DataTablePagination = (props: {
   rowNumberFilter: number;
-  rowTotalCount: number;
+  dataset: object[];
   pageIndex: number;
   currentRows: object[];
   setPageIndex: Function;
 }) => {
   const [pageNumbers, setPageNumbers] = useState<number[]>([1]);
+  const startingRowIndex = props.rowNumberFilter * props.pageIndex + 1;
+  let endRowIndex =
+    startingRowIndex + props.rowNumberFilter > props.dataset.length
+      ? props.dataset.length
+      : startingRowIndex + props.rowNumberFilter - 1;
 
   useEffect(() => {
-    const pageCount = props.rowTotalCount / props.rowNumberFilter + 1;
+    const pageCount = props.dataset.length / props.rowNumberFilter + 1;
     const pages = [];
 
     for (let i = 1; i < pageCount; i++) {
@@ -18,11 +23,11 @@ export const DataTablePagination = (props: {
     }
 
     setPageNumbers(pages);
-  }, [props.rowTotalCount, props.rowNumberFilter]);
+  }, [props.dataset, props.rowNumberFilter]);
 
   // Add/Substract a value to pageIndex with max/min constraints (used by arrows button)
   const changePageIndex = (valueToAdd: number) => {
-    const maxIndex = Math.floor(props.rowTotalCount / props.rowNumberFilter);
+    const maxIndex = Math.floor(props.dataset.length / props.rowNumberFilter);
 
     let finalIndex = Math.min(props.pageIndex + valueToAdd, maxIndex);
     finalIndex = Math.max(0, finalIndex);
@@ -33,9 +38,8 @@ export const DataTablePagination = (props: {
   return (
     <div className="datatable-pagination">
       <p className="datatable-pagination__infos">
-        Showing {props.rowNumberFilter * props.pageIndex + 1} to{" "}
-        {props.rowNumberFilter * props.pageIndex + props.rowNumberFilter} of{" "}
-        {props.rowTotalCount} total records.
+        Showing {startingRowIndex} to {endRowIndex} of {props.dataset.length}{" "}
+        entries
       </p>
       <div className="datatable-pagination__buttons">
         <button

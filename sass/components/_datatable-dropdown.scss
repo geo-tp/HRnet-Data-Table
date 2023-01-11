@@ -1,0 +1,21 @@
+.datatable-dropdown {
+  & td {
+    background-color: white !important;
+  }
+
+  & ul {
+    list-style: none;
+
+    & li {
+      display: flex;
+      & span {
+        &:first-child {
+          display: block;
+          font-weight: bold;
+          padding-right: 20px;
+          width: 150px;
+        }
+      }
+    }
+  }
+}

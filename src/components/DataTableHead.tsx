@@ -31,7 +31,7 @@ export const DataTableHead = (props: {
   return (
     <thead className="datatable-head">
       <tr>
-        {props.namedFields?.map((namedField, index) => (
+        {props.namedFields?.slice(0, 5).map((namedField, index) => (
           <th
             onClick={() => sortRows(props.tableFields[index])}
             key={`datatable-fields-${index}`}

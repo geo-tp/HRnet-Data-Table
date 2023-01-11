@@ -9,8 +9,8 @@ export const DataTable = (props: {
   fields?: Array<string>;
 }) => {
   const [rowNumberFilter, setRowNumberFilter] = useState(10);
-  const rowTotalCount = props.dataset.length;
   const [currentRows, setCurrentRows] = useState(props.dataset);
+  const [dataset, setDataset] = useState(props.dataset);
   const [pageIndex, setPageIndex] = useState(0);
 
   // Reset page index to 0 when rowNumberFilter get updated
@@ -18,12 +18,17 @@ export const DataTable = (props: {
     setPageIndex(0);
   }, [rowNumberFilter]);
 
+  // In case dataset get updated
+  useEffect(() => {
+    setDataset(props.dataset);
+  }, [props.dataset]);
+
   // Calculate current showing rows taking into account pagination
   useEffect(() => {
     const currentStartIndex = pageIndex * rowNumberFilter;
     const currentEndIndex = pageIndex * rowNumberFilter + rowNumberFilter;
-    setCurrentRows(props.dataset.slice(currentStartIndex, currentEndIndex));
-  }, [rowNumberFilter, pageIndex, props.dataset]);
+    setCurrentRows(dataset.slice(currentStartIndex, currentEndIndex));
+  }, [rowNumberFilter, pageIndex, dataset]);
 
   // Return keys of dataset object to use it as fields if props.fields is null
   const extractFields: Function = (): string[] => {
@@ -35,8 +40,9 @@ export const DataTable = (props: {
       <DataTableUtilities
         rowNumberFilter={rowNumberFilter}
         setRowNumberFilter={setRowNumberFilter}
-        currentRows={currentRows}
-        setCurrentRows={setCurrentRows}
+        totalRows={props.dataset}
+        setDataset={setDataset}
+        pageIndex={pageIndex}
       />
 
       <table>
@@ -53,7 +59,7 @@ export const DataTable = (props: {
 
       <DataTablePagination
         rowNumberFilter={rowNumberFilter}
-        rowTotalCount={rowTotalCount}
+        dataset={dataset}
         currentRows={currentRows}
         setPageIndex={setPageIndex}
         pageIndex={pageIndex}

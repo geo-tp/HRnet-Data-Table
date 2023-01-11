@@ -58,6 +58,11 @@ label {
   cursor: pointer;
 }
 
+.datatable table {
+  border-collapse: collapse;
+  width: 100%;
+}
+
 .datatable-utilities {
   display: flex;
   justify-content: space-between;
@@ -81,6 +86,61 @@ label {
 .datatable-pagination__buttons {
   display: flex;
 }
+.datatable-body tr {
+  cursor: pointer;
+}
+.datatable-body tr:nth-child(odd) {
+  background-color: #f9f9f9;
+}
+.datatable-body tr:nth-child(odd) td:nth-child(1) {
+  background-color: #f1f1f1;
+}
+.datatable-body tr:nth-child(even) td:nth-child(1) {
+  background-color: #fafafa;
+}
+.datatable-body td {
+  padding: 10px;
+  border-bottom: 1pt solid #e1e1e1;
+}
+
+.datatable-head th {
+  cursor: pointer;
+  padding: 15px;
+  padding-left: 5px;
+  text-align: left;
+}
+
+.datatable-row td {
+  padding: 10px;
+  border-bottom: 1pt solid #e1e1e1;
+}
+.datatable-row td:first-child i {
+  margin-right: 7px;
+  font-size: 0.9em;
+}
+.datatable-row__fold {
+  color: #c10606;
+}
+.datatable-row__unfold {
+  color: green;
+}
+
+.datatable-dropdown td {
+  background-color: white !important;
+}
+.datatable-dropdown ul {
+  list-style: none;
+}
+.datatable-dropdown ul li {
+  display: flex;
+}
+.datatable-dropdown ul li span:first-child {
+  display: block;
+  font-weight: bold;
+  padding-right: 20px;
+  width: 150px;
+}
+
 .default-container {
   display: flex;
   flex-direction: column;

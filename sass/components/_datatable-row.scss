@@ -1,0 +1,21 @@
+.datatable-row {
+  & td {
+    padding: 10px;
+    border-bottom: 1pt solid $color4;
+
+    &:first-child {
+      & i {
+        margin-right: 7px;
+        font-size: 0.9em;
+      }
+    }
+  }
+
+  &__fold {
+    color: $bad;
+  }
+
+  &__unfold {
+    color: $good;
+  }
+}

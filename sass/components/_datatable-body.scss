@@ -1,0 +1,27 @@
+.datatable-body {
+  & tr {
+    cursor: pointer;
+
+    &:nth-child(odd) {
+      background-color: $color3;
+      & td {
+        &:nth-child(1) {
+          background-color: $color5;
+        }
+      }
+    }
+
+    &:nth-child(even) {
+      & td {
+        &:nth-child(1) {
+          background-color: $color6;
+        }
+      }
+    }
+  }
+
+  & td {
+    padding: 10px;
+    border-bottom: 1pt solid $color4;
+  }
+}
