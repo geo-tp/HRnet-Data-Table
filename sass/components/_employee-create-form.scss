@@ -1,10 +1,23 @@
 .employee-create-form {
   display: flex;
   flex-direction: column;
+  background-color: $color1;
+  padding: 20px;
+  border-radius: 7px;
 
   &__button {
     width: 80px;
     margin: 0 auto;
     margin-top: 20px;
+    background: $gradient2;
+    border-radius: 10px;
+    color: $color4;
+    font-size: 1.1em;
+    font-weight: bold;
+
+    &:hover {
+      opacity: 0.8;
+      border: 1px solid $color5;
+    }
   }
 }

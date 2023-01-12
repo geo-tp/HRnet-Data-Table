@@ -8,7 +8,7 @@ export const DataTable = (props: {
   dataset: Array<object>;
   fields?: Array<string>;
 }) => {
-  const [rowNumberFilter, setRowNumberFilter] = useState(10);
+  const [rowNumberFilter, setRowNumberFilter] = useState(50);
   const [currentRows, setCurrentRows] = useState(props.dataset);
   const [dataset, setDataset] = useState(props.dataset);
   const [pageIndex, setPageIndex] = useState(0);

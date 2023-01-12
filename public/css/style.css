@@ -1,3 +1,8 @@
+html {
+  background: linear-gradient(to right, #3a7fd5, #6ebce2);
+  font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS", sans-serif;
+}
+
 label {
   display: block;
   margin-top: 1rem;
@@ -23,11 +28,23 @@ button:hover {
 .employee-create-form {
   display: flex;
   flex-direction: column;
+  background-color: white;
+  padding: 20px;
+  border-radius: 7px;
 }
 .employee-create-form__button {
   width: 80px;
   margin: 0 auto;
   margin-top: 20px;
+  background: linear-gradient(to right, #3a7fd5, #6ebce2);
+  border-radius: 10px;
+  color: #e1e1e1;
+  font-size: 1.1em;
+  font-weight: bold;
+}
+.employee-create-form__button:hover {
+  opacity: 0.8;
+  border: 1px solid #f1f1f1;
 }
 
 .address {
@@ -38,6 +55,11 @@ button:hover {
   display: flex;
   align-items: center;
   justify-content: center;
+  color: white;
+}
+
+.secondary-header {
+  color: white;
 }
 
 .alert-message {
@@ -79,6 +101,8 @@ button:hover {
   border: 1px solid #e1e1e1;
   border-radius: 5px;
   font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS", sans-serif;
+  max-width: 1200px;
+  background-color: white;
 }
 .datatable table {
   border-collapse: collapse;
@@ -316,6 +340,13 @@ button:hover {
   background-color: #000;
   background-color: rgba(0, 0, 0, 0.75);
   text-align: center;
+}
+
+.datatable-container {
+  display: flex;
+  justify-content: center;
+  margin: 50px 0px;
+  margin-top: 0px;
 }
 
 /*# sourceMappingURL=style.css.map */
