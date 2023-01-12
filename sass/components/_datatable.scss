@@ -2,12 +2,14 @@
   padding: 20px;
   border: 1px solid $color4;
   border-radius: 5px;
-  font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS", sans-serif;
-  max-width: 1200px;
   background-color: $color1;
 
   & table {
     border-collapse: collapse;
+    width: 100%;
+  }
+
+  @include tablet-design {
     width: 100%;
   }
 }

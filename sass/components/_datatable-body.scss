@@ -55,7 +55,7 @@
     }
   }
 
-  @include mobile-design {
+  @include small-mobile-design {
     & tr {
       & td {
         display: none;

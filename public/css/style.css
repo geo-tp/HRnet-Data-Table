@@ -29,8 +29,22 @@ button:hover {
   display: flex;
   flex-direction: column;
   background-color: white;
-  padding: 20px;
+  padding: 20px 30px;
   border-radius: 7px;
+}
+.employee-create-form input {
+  height: 25px;
+  border-radius: 4px;
+  border: 1px solid #939393;
+}
+.employee-create-form fieldset select {
+  width: 88%;
+}
+.employee-create-form select {
+  height: 30px;
+  border: 1px solid #939393;
+  background-color: white;
+  border-radius: 4px;
 }
 .employee-create-form__button {
   width: 80px;
@@ -100,13 +114,16 @@ button:hover {
   padding: 20px;
   border: 1px solid #e1e1e1;
   border-radius: 5px;
-  font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS", sans-serif;
-  max-width: 1200px;
   background-color: white;
 }
 .datatable table {
   border-collapse: collapse;
   width: 100%;
+}
+@media screen and (max-width: 700px) {
+  .datatable {
+    width: 100%;
+  }
 }
 
 .datatable-utilities {
@@ -226,7 +243,7 @@ button:hover {
     display: table-cell;
   }
 }
-@media screen and (max-width: 500px) {
+@media screen and (max-width: 395px) {
   .datatable-body tr td {
     display: none;
   }
@@ -243,6 +260,9 @@ button:hover {
   color: #484848;
   font-size: 0.9em;
 }
+.datatable-head th:hover {
+  opacity: 0.85;
+}
 @media screen and (max-width: 700px) {
   .datatable-head th {
     display: none;
@@ -257,7 +277,7 @@ button:hover {
     display: table-cell;
   }
 }
-@media screen and (max-width: 500px) {
+@media screen and (max-width: 395px) {
   .datatable-head th {
     display: none;
   }
@@ -347,6 +367,9 @@ button:hover {
   justify-content: center;
   margin: 50px 0px;
   margin-top: 0px;
+}
+.datatable-container .datatable {
+  width: 800px;
 }
 
 /*# sourceMappingURL=style.css.map */

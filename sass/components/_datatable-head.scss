@@ -6,6 +6,10 @@
     text-align: left;
     color: $color10;
     font-size: 0.9em;
+
+    &:hover {
+      opacity: 0.85;
+    }
   }
 
   @include tablet-design {
@@ -26,7 +30,7 @@
     }
   }
 
-  @include mobile-design {
+  @include small-mobile-design {
     & th {
       display: none;
 
