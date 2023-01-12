@@ -2,6 +2,8 @@
 
 ![](presentation.webp)
 
+[See React Data Table Live Demo](https://geo-tp.github.io/HRnet-Data-Table/)
+
 React component for working with table :
 
 - Sort by fields
