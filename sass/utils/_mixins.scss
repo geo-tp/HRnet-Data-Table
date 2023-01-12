@@ -1,0 +1,17 @@
+@mixin in-shadow {
+  -webkit-box-shadow: inset 0px 0px 14px 0px rgba(207, 207, 207, 1);
+  -moz-box-shadow: inset 0px 0px 14px 0px rgba(207, 207, 207, 1);
+  box-shadow: inset 0px 0px 14px 0px rgba(207, 207, 207, 1);
+}
+
+@mixin mobile-design {
+  @media screen and (max-width: 500px) {
+    @content;
+  }
+}
+
+@mixin tablet-design {
+  @media screen and (max-width: 700px) {
+    @content;
+  }
+}

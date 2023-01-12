@@ -3,3 +3,20 @@ label {
   margin-top: 1rem;
   margin-bottom: 10px;
 }
+
+button {
+  border: none;
+  background-color: transparent;
+  cursor: pointer;
+  box-sizing: border-box;
+  border: 1px solid $color1;
+  padding: 10px;
+
+  &:hover {
+    opacity: 0.8;
+    border: 1px solid $color2;
+    background-color: $color2;
+    border-radius: 7px;
+    color: $color1;
+  }
+}

@@ -3,6 +3,14 @@
   justify-content: space-between;
   align-items: center;
 
+  &__row-number-selector {
+    & select {
+      background-color: $color1;
+      padding: 3px;
+      border: 1px solid $color4;
+    }
+  }
+
   &__search-bar {
     display: flex;
     justify-content: center;
@@ -11,6 +19,23 @@
     & label {
       margin: 0;
       padding: 0;
+      padding-right: 5px;
+    }
+
+    & input {
+      border: 1px solid $color4;
+      border-radius: 3px;
+    }
+  }
+
+  @include mobile-design {
+    flex-direction: column-reverse;
+
+    &__search-bar {
+      margin-bottom: 10px;
+      & input {
+        width: 120px;
+      }
     }
   }
 }

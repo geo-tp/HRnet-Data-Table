@@ -4,5 +4,35 @@
     padding: 15px;
     padding-left: 5px;
     text-align: left;
+    color: $color10;
+    font-size: 0.9em;
+  }
+
+  @include tablet-design {
+    & th {
+      display: none;
+
+      &:nth-child(1) {
+        display: table-cell;
+      }
+
+      &:nth-child(2) {
+        display: table-cell;
+      }
+
+      &:nth-child(3) {
+        display: table-cell;
+      }
+    }
+  }
+
+  @include mobile-design {
+    & th {
+      display: none;
+
+      &:nth-child(3) {
+        display: none;
+      }
+    }
   }
 }

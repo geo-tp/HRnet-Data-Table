@@ -1,6 +1,3 @@
-import { useState } from "react";
-import { DatabatableDropDown } from "./DataTableDropDown";
-
 export const DataTableRow = (props: {
   row: { [keys: string]: string | number };
   changeDropDownState: Function;

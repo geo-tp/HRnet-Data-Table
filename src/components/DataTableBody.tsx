@@ -43,7 +43,7 @@ export const DataTableBody = (props: { dataset: any[] }) => {
 
       {props.dataset.length === 0 && (
         <tr className="datable-body__no-results">
-          <td>No matching records found</td>
+          <td colSpan={5}>No matching records found</td>
         </tr>
       )}
     </tbody>

@@ -43,6 +43,7 @@ export const DataTable = (props: {
         totalRows={props.dataset}
         setDataset={setDataset}
         pageIndex={pageIndex}
+        setPageIndex={setPageIndex}
       />
 
       <table>

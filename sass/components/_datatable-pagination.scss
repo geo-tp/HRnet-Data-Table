@@ -2,11 +2,46 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
+  margin-top: 10px;
+
+  &__infos {
+    font-size: 0.85em;
+    color: $color2;
+  }
 
   &__buttons {
     display: flex;
 
-    &__pages {
+    & button {
+      border: none;
+      background-color: transparent;
+      box-sizing: border-box;
+      border: 1px solid $color1;
+      padding: 10px;
+
+      &:enabled {
+        cursor: pointer;
+        &:hover {
+          opacity: 0.8;
+          border: 1px solid $color9;
+          background: $color9;
+          border-radius: 3px;
+          color: $color1;
+        }
+      }
     }
+
+    &__pages {
+      &__selected {
+        background: $gradient1;
+        border: 1px solid $color7 !important;
+        opacity: 0.8;
+        border-radius: 3px;
+      }
+    }
+  }
+
+  @include tablet-design {
+    flex-direction: column-reverse;
   }
 }

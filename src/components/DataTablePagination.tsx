@@ -8,22 +8,34 @@ export const DataTablePagination = (props: {
   setPageIndex: Function;
 }) => {
   const [pageNumbers, setPageNumbers] = useState<number[]>([1]);
+  const [pageTotalCount, setPageTotalCount] = useState(1);
   const startingRowIndex = props.rowNumberFilter * props.pageIndex + 1;
   let endRowIndex =
     startingRowIndex + props.rowNumberFilter > props.dataset.length
       ? props.dataset.length
       : startingRowIndex + props.rowNumberFilter - 1;
 
+  // Build pages link array
   useEffect(() => {
     const pageCount = props.dataset.length / props.rowNumberFilter + 1;
-    const pages = [];
+    let pages = [];
 
-    for (let i = 1; i < pageCount; i++) {
+    let startIndex = 1;
+    let endIndex = pageCount - 1;
+    console.log(pageNumbers);
+
+    if (pageCount > 10) {
+      startIndex = Math.max(1, props.pageIndex - 2);
+      endIndex = Math.min(pageCount, props.pageIndex + 6);
+    }
+
+    for (let i = startIndex; i < endIndex; i++) {
       pages.push(i);
     }
 
-    setPageNumbers(pages);
-  }, [props.dataset, props.rowNumberFilter]);
+    setPageNumbers(pages.slice(0, 7));
+    setPageTotalCount(props.dataset.length / props.rowNumberFilter - 1);
+  }, [props.dataset, props.rowNumberFilter, props.pageIndex]);
 
   // Add/Substract a value to pageIndex with max/min constraints (used by arrows button)
   const changePageIndex = (valueToAdd: number) => {
@@ -45,17 +57,26 @@ export const DataTablePagination = (props: {
         <button
           onClick={(e) => changePageIndex(-1)}
           className="datatable-pagination__previous"
+          disabled={props.pageIndex === 0}
         >
           Previous
         </button>
         <div className="datatable-pagination__buttons__pages">
           {pageNumbers.map((pageNumber) => (
-            <button onClick={() => props.setPageIndex(pageNumber - 1)}>
+            <button
+              className={
+                props.pageIndex === pageNumber - 1
+                  ? "datatable-pagination__buttons__pages__selected"
+                  : ""
+              }
+              onClick={() => props.setPageIndex(pageNumber - 1)}
+            >
               {pageNumber}
             </button>
           ))}
         </div>
         <button
+          disabled={props.pageIndex > pageTotalCount}
           onClick={(e) => changePageIndex(1)}
           className="datatable-pagination__next"
         >

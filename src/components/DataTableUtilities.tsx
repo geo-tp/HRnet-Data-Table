@@ -6,6 +6,7 @@ export const DataTableUtilities = (props: {
   totalRows: object[];
   setDataset: Function;
   pageIndex: number;
+  setPageIndex: Function;
 }) => {
   const [searchFormattedRows, setSearchFormattedRows] = useState<string[]>([]);
 
@@ -33,6 +34,7 @@ export const DataTableUtilities = (props: {
         }
 
         props.setDataset(occurences);
+        props.setPageIndex(0);
       }
       // there is no keywords, we revert currentRows to initial state
     } else {

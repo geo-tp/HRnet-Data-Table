@@ -8,12 +8,39 @@
 
     & li {
       display: flex;
+
+      &:nth-child(odd) {
+        border: 1px solid $color5;
+        border-right: none;
+        border-left: none;
+      }
+
       & span {
+        padding: 15px 10px;
+        min-width: 150px;
+
         &:first-child {
           display: block;
           font-weight: bold;
           padding-right: 20px;
-          width: 150px;
+        }
+      }
+    }
+  }
+
+  @include mobile-design {
+    & ul {
+      margin-left: 0px;
+      padding-left: 0px;
+
+      & li {
+        & span {
+          min-width: 100px;
+          &:first-child {
+            display: block;
+            font-weight: bold;
+            padding-right: 10px;
+          }
         }
       }
     }
