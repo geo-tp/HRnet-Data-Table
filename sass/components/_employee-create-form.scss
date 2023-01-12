@@ -8,7 +8,7 @@
   & input {
     height: 25px;
     border-radius: 4px;
-    border: 1px solid $color7;
+    border: 1px solid $color11;
   }
 
   & fieldset {
@@ -19,7 +19,7 @@
 
   & select {
     height: 30px;
-    border: 1px solid $color7;
+    border: 1px solid $color11;
     background-color: $color1;
     border-radius: 4px;
   }
@@ -30,13 +30,13 @@
     margin-top: 20px;
     background: $gradient2;
     border-radius: 10px;
-    color: $color4;
+    color: $color1;
     font-size: 1.1em;
     font-weight: bold;
 
     &:hover {
       opacity: 0.8;
-      border: 1px solid $color5;
+      border: 1px solid $color1;
     }
   }
 }

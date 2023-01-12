@@ -35,14 +35,14 @@ button:hover {
 .employee-create-form input {
   height: 25px;
   border-radius: 4px;
-  border: 1px solid #939393;
+  border: 1px solid #b3b3b39e;
 }
 .employee-create-form fieldset select {
   width: 88%;
 }
 .employee-create-form select {
   height: 30px;
-  border: 1px solid #939393;
+  border: 1px solid #b3b3b39e;
   background-color: white;
   border-radius: 4px;
 }
@@ -52,13 +52,13 @@ button:hover {
   margin-top: 20px;
   background: linear-gradient(to right, #3a7fd5, #6ebce2);
   border-radius: 10px;
-  color: #e1e1e1;
+  color: white;
   font-size: 1.1em;
   font-weight: bold;
 }
 .employee-create-form__button:hover {
   opacity: 0.8;
-  border: 1px solid #f1f1f1;
+  border: 1px solid white;
 }
 
 .address {
