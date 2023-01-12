@@ -161,6 +161,9 @@ button:hover {
   .datatable-pagination {
     flex-direction: column-reverse;
   }
+  .datatable-pagination button {
+    padding: 5px;
+  }
 }
 
 .datatable-body tr {

@@ -9,8 +9,8 @@ export const DatabatableDropDown = (props: {
     <tr className="datatable-dropdown">
       <td colSpan={4}>
         <ul>
-          {keys.map((key) => (
-            <li>
+          {keys.map((key, index) => (
+            <li key={`datatable-dropdown-${index}`}>
               <span>{key}</span>
               <span>{props.row[key]}</span>
             </li>

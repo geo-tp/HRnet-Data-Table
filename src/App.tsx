@@ -10,7 +10,7 @@ function App() {
       <Provider store={store}>
         <BrowserRouter>
           <Routes>
-            <Route path="/" element={<HomePage />} />
+            <Route path="/" element={<EmployeesPage />} />
             <Route path="/employees" element={<EmployeesPage />} />
           </Routes>
         </BrowserRouter>

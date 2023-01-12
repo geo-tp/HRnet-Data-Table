@@ -22,7 +22,6 @@ export const DataTablePagination = (props: {
 
     let startIndex = 1;
     let endIndex = pageCount - 1;
-    console.log(pageNumbers);
 
     if (pageCount > 10) {
       startIndex = Math.max(1, props.pageIndex - 2);
@@ -62,8 +61,9 @@ export const DataTablePagination = (props: {
           Previous
         </button>
         <div className="datatable-pagination__buttons__pages">
-          {pageNumbers.map((pageNumber) => (
+          {pageNumbers.map((pageNumber, index) => (
             <button
+              key={`datatable-page-button-${index}`}
               className={
                 props.pageIndex === pageNumber - 1
                   ? "datatable-pagination__buttons__pages__selected"

@@ -43,5 +43,9 @@
 
   @include tablet-design {
     flex-direction: column-reverse;
+
+    & button {
+      padding: 5px;
+    }
   }
 }

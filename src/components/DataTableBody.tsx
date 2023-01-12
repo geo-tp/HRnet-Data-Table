@@ -26,6 +26,7 @@ export const DataTableBody = (props: { dataset: any[] }) => {
 
         const components = [
           <DataTableRow
+            key={`datatable-row-${index}`}
             row={row}
             changeDropDownState={changeDropDownState}
             index={index}
@@ -35,7 +36,12 @@ export const DataTableBody = (props: { dataset: any[] }) => {
 
         // if index is in list, dropdown must be displayed
         if (dropDownIsOpen) {
-          components.push(<DatabatableDropDown row={row} />);
+          components.push(
+            <DatabatableDropDown
+              key={`datatable-row-dropdown-${index}`}
+              row={row}
+            />
+          );
         }
 
         return components;
