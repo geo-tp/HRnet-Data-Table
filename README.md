@@ -1,3 +1,60 @@
+# React Data Table
+
+React component for working with table
+
+## How to use it
+
+```
+// Feed it with an array of objects
+const employees = [
+    {
+        firstname: string;
+        lastname: string;
+        startdate: string;
+        department: string;
+        birthdate: string;
+        street: string;
+        city: string;
+        state: string;
+        zipcode: string;
+    },
+    {
+        firstname: string;
+        lastname: string;
+        startdate: string;
+        department: string;
+        birthdate: string;
+        street: string;
+        city: string;
+        state: string;
+        zipcode: string;
+    },
+];
+
+// Use it, fields prop can be null, keys from dataset will be used instead
+<DataTable
+    dataset={employees}
+    fields={[
+    "First Name",
+    "Last Name",
+    "Start Date",
+    "Department",
+    "Date of Birth",
+    "Street",
+    "City",
+    "State",
+    "Zip Code",
+    ]}
+/>
+```
+
+## Version
+
+- npm version 8.11.0
+- node version 17.9.1
+- sass 1.53.2
+- typescript 4.9.4
+
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
