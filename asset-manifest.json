@@ -1,12 +1,12 @@
 {
   "files": {
-    "main.js": "/HRnet-Data-Table/static/js/main.c7258903.js",
+    "main.js": "/HRnet-Data-Table/static/js/main.c2206130.js",
     "static/js/787.a603b31f.chunk.js": "/HRnet-Data-Table/static/js/787.a603b31f.chunk.js",
     "index.html": "/HRnet-Data-Table/index.html",
-    "main.c7258903.js.map": "/HRnet-Data-Table/static/js/main.c7258903.js.map",
+    "main.c2206130.js.map": "/HRnet-Data-Table/static/js/main.c2206130.js.map",
     "787.a603b31f.chunk.js.map": "/HRnet-Data-Table/static/js/787.a603b31f.chunk.js.map"
   },
   "entrypoints": [
-    "static/js/main.c7258903.js"
+    "static/js/main.c2206130.js"
   ]
 }

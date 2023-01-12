@@ -1,3 +1,7 @@
+html {
+  background: linear-gradient(to right, #3a7fd5, #6ebce2);
+}
+
 label {
   display: block;
   margin-top: 1rem;
@@ -79,6 +83,8 @@ button:hover {
   border: 1px solid #e1e1e1;
   border-radius: 5px;
   font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS", sans-serif;
+  max-width: 1200px;
+  background-color: white;
 }
 .datatable table {
   border-collapse: collapse;
@@ -316,6 +322,12 @@ button:hover {
   background-color: #000;
   background-color: rgba(0, 0, 0, 0.75);
   text-align: center;
+}
+
+.datatable-container {
+  display: flex;
+  justify-content: center;
+  margin: 50px 0px;
 }
 
 /*# sourceMappingURL=style.css.map */
