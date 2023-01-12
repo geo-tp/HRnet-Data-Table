@@ -1,6 +1,13 @@
 # React Data Table
 
-React component for working with table
+![](presentation.webp)
+
+React component for working with table :
+
+- Sort by fields
+- Search occurences
+- Pagination
+- Details Dropdown
 
 ## How to use it
 
@@ -8,26 +15,26 @@ React component for working with table
 // Feed it with an array of objects
 const employees = [
     {
-        firstname: string;
-        lastname: string;
-        startdate: string;
-        department: string;
-        birthdate: string;
-        street: string;
-        city: string;
-        state: string;
-        zipcode: string;
+        firstname: "string";
+        lastname: "string";
+        startdate: "string";
+        department: "string";
+        birthdate: "string";
+        street: "string";
+        city: "string";
+        state: "string";
+        zipcode: "string";
     },
     {
-        firstname: string;
-        lastname: string;
-        startdate: string;
-        department: string;
-        birthdate: string;
-        street: string;
-        city: string;
-        state: string;
-        zipcode: string;
+        firstname: "string";
+        lastname: "string";
+        startdate: "string";
+        department: "string";
+        birthdate: "string";
+        street: "string";
+        city: "string";
+        state: "string";
+        zipcode: "string";
     },
 ];
 
@@ -35,15 +42,15 @@ const employees = [
 <DataTable
     dataset={employees}
     fields={[
-    "First Name",
-    "Last Name",
-    "Start Date",
-    "Department",
-    "Date of Birth",
-    "Street",
-    "City",
-    "State",
-    "Zip Code",
+        "First Name",
+        "Last Name",
+        "Start Date",
+        "Department",
+        "Date of Birth",
+        "Street",
+        "City",
+        "State",
+        "Zip Code",
     ]}
 />
 ```
