@@ -1,7 +1,7 @@
 import { DataTable } from "../components/DataTable";
 import { PrimaryHeader } from "../components/PrimaryHeaders";
 import { DataTableContainer } from "../containers/DataTableContainer";
-import { mockedEmployees } from "../utils/mockedEmployees";
+import { mockedEmployees } from "../data/mockedEmployees";
 
 export const EmployeesPage = () => {
   return (

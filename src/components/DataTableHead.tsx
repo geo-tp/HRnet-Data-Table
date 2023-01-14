@@ -11,7 +11,7 @@ export const DataTableHead = (props: {
   // Sort currentRows with field name asc/desc
   const sortRows = (fieldName: string): void => {
     const rows: any[] = [...props.currentRows];
-    let direction: string = "asc";
+    let direction = "asc";
 
     // already sorted, we reverse rows
     if (fieldName + direction === sortBy) {

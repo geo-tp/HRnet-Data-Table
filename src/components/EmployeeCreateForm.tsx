@@ -4,7 +4,8 @@ import { ModalContainer } from "../containers/ModalContainer";
 import { addEmployee } from "../store/employee/actions";
 import { EmployeeType } from "../types";
 import { AlertMessage } from "./AlertMessage";
-import { usaStates } from "../utils/usaStates";
+import { usaStates } from "../data/usaStates";
+import { companyDepartments } from "../data/CompanyDepartments";
 
 export const EmployeeCreateForm = () => {
   const dispatch = useDispatch();
@@ -15,9 +16,9 @@ export const EmployeeCreateForm = () => {
   const [startdate, setStartdate] = useState("");
   const [street, setStreet] = useState("");
   const [city, setCity] = useState("");
-  const [state, setState] = useState("Alabama");
+  const [state, setState] = useState(usaStates[0].name);
   const [zipcode, setZipcode] = useState("");
-  const [department, setDepartment] = useState("Sales");
+  const [department, setDepartment] = useState(companyDepartments[0]);
 
   const [modalIsOpen, setModalIsOpen] = useState(false);
 
@@ -44,9 +45,9 @@ export const EmployeeCreateForm = () => {
     setStartdate("");
     setStreet("");
     setCity("");
-    setState("Alabama");
+    setState(usaStates[0].name);
     setZipcode("");
-    setDepartment("Sales");
+    setDepartment(companyDepartments[0]);
 
     setModalIsOpen(true);
   };
@@ -143,11 +144,9 @@ export const EmployeeCreateForm = () => {
         onChange={(e) => setDepartment(e.target.value)}
         required
       >
-        <option>Sales</option>
-        <option>Marketing</option>
-        <option>Engineering</option>
-        <option>Human Resources</option>
-        <option>Legal</option>
+        {companyDepartments.map((dep) => (
+          <option key={`company-department-${dep}`}>{dep}</option>
+        ))}
       </select>
       <button className="employee-create-form__button">Save</button>
       {modalIsOpen && (
