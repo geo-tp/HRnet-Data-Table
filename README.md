@@ -4,7 +4,7 @@
 
 [See React Data Table Live Demo](https://geo-tp.github.io/HRnet-Data-Table/)
 
-React component for working with table :
+React component to work with HTML table :
 
 - Sort by fields
 - Search occurences
@@ -71,6 +71,10 @@ This project was bootstrapped with [Create React App](https://github.com/faceboo
 ## Available Scripts
 
 In the project directory, you can run:
+
+### `npm install`
+
+Install required dependencies for the project
 
 ### `npm start`
 
