@@ -1,4 +1,4 @@
-import { DataTable } from "../components/DataTable";
+import { DataTable } from "../components/DataTable/DataTable";
 import { PrimaryHeader } from "../components/PrimaryHeaders";
 import { DataTableContainer } from "../containers/DataTableContainer";
 import { mockedEmployees } from "../data/mockedEmployees";

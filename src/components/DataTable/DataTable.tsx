@@ -1,4 +1,5 @@
 import { useEffect, useState } from "react";
+import { rowNumberOptions } from "../../data/rowNumberOption";
 import { DataTableBody } from "./DataTableBody";
 import { DataTableHead } from "./DataTableHead";
 import { DataTablePagination } from "./DataTablePagination";
@@ -8,7 +9,7 @@ export const DataTable = (props: {
   dataset: Array<object>;
   fields?: Array<string>;
 }) => {
-  const [rowNumberFilter, setRowNumberFilter] = useState(50);
+  const [rowNumberFilter, setRowNumberFilter] = useState(rowNumberOptions[0]);
   const [currentRows, setCurrentRows] = useState(props.dataset);
   const [dataset, setDataset] = useState(props.dataset);
   const [pageIndex, setPageIndex] = useState(0);
@@ -36,7 +37,7 @@ export const DataTable = (props: {
   };
 
   return (
-    <div className="datatable">
+    <div className="datatable" data-testid="datatable">
       <DataTableUtilities
         rowNumberFilter={rowNumberFilter}
         setRowNumberFilter={setRowNumberFilter}

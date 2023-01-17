@@ -10,6 +10,7 @@ export const DataTableRow = (props: {
     <tr
       onClick={() => props.changeDropDownState(props.index)}
       className="datatable-row"
+      data-testid="datatable-row"
     >
       {values.slice(0, 5).map((value, index) => (
         <td key={`datable-row-${index}`}>

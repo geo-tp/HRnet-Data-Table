@@ -5,7 +5,7 @@ import { addEmployee } from "../store/employee/actions";
 import { EmployeeType } from "../types";
 import { AlertMessage } from "./AlertMessage";
 import { usaStates } from "../data/usaStates";
-import { companyDepartments } from "../data/CompanyDepartments";
+import { companyDepartments } from "../data/companyDepartments";
 
 export const EmployeeCreateForm = () => {
   const dispatch = useDispatch();

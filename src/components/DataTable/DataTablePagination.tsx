@@ -54,6 +54,7 @@ export const DataTablePagination = (props: {
       </p>
       <div className="datatable-pagination__buttons">
         <button
+          data-testid="datatable-pagination-prev"
           onClick={(e) => changePageIndex(-1)}
           className="datatable-pagination__previous"
           disabled={props.pageIndex === 0}
@@ -76,6 +77,7 @@ export const DataTablePagination = (props: {
           ))}
         </div>
         <button
+          data-testid="datatable-pagination-next"
           disabled={props.pageIndex > pageTotalCount}
           onClick={(e) => changePageIndex(1)}
           className="datatable-pagination__next"

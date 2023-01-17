@@ -6,7 +6,7 @@ export const DatabatableDropDown = (props: {
   const keys = Object.keys(props.row);
 
   return (
-    <tr className="datatable-dropdown">
+    <tr className="datatable-dropdown" data-testid="datatable-dropdown">
       <td colSpan={4}>
         <ul>
           {keys.map((key, index) => (

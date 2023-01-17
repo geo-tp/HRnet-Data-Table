@@ -1,4 +1,5 @@
 import { useEffect, useState } from "react";
+import { rowNumberOptions } from "../../data/rowNumberOption";
 
 export const DataTableUtilities = (props: {
   rowNumberFilter: number;
@@ -47,15 +48,21 @@ export const DataTableUtilities = (props: {
       <div className="datatable-utilities__row-number-selector">
         <span>Show </span>
         <select
+          data-testid="datatable-rows-number-selector"
           value={props.rowNumberFilter}
           onChange={(e) => props.setRowNumberFilter(parseInt(e.target.value))}
           name="row-number-selector"
           id="row-number-selector"
         >
-          <option value="10">10</option>
-          <option value="25">25</option>
-          <option value="50">50</option>
-          <option value="100">100</option>
+          {rowNumberOptions.map((num) => (
+            <option
+              key={`row-number-option-${num}`}
+              data-testid="datatable-rows-number-option"
+              value={num}
+            >
+              {num}
+            </option>
+          ))}
         </select>
         <span> entries</span>
       </div>
@@ -63,6 +70,7 @@ export const DataTableUtilities = (props: {
       <div className="datatable-utilities__search-bar">
         <label htmlFor="row-search-bar">Search : </label>
         <input
+          data-testid="row-search-bar"
           onChange={(e) => searchByKeywords(e.target.value)}
           type="text"
           name="row-search-bar"
