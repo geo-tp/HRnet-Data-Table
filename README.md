@@ -57,6 +57,16 @@ const employees = [
 />
 ```
 
+## NPM Package
+
+---
+
+You can download this component with npm : [React TypeScript Data Table](https://www.npmjs.com/package/react-typescript-data-table).
+
+```
+npm i react-typescript-data-table
+```
+
 ## Version
 
 - npm version 8.11.0
