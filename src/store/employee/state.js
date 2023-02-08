@@ -1,7 +1,9 @@
+import { mockedEmployees } from "../../data/mockedEmployees";
+
 export const employeesDefaultState = {
-  isLoaded: false,
+  isLoaded: true,
   isLoading: false,
   isUpdating: false,
   hasError: false,
-  data: [],
+  data: mockedEmployees,
 };
